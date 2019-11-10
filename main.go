@@ -159,7 +159,7 @@ func main() {
 		}
 		var (
 			used, tag bool
-			enc string
+			enc       string
 		)
 		if len(ss) > 4 {
 			used, tag, enc = parseFlags(ss[4])
@@ -177,7 +177,7 @@ func main() {
 		av := byte(v)
 		at := convertType(ss[3])
 		if !useVid { // Plain attr
-			if !used{
+			if !used {
 				fmt.Printf("MustAddAttr(\"%s\", %d, %s)\n", an, av, at)
 			} else {
 				if tag {
@@ -187,7 +187,7 @@ func main() {
 				}
 			}
 		} else { // VSA
-			if !used{
+			if !used {
 				fmt.Printf("MustAddVSA(\"%s\", %d, %d, %s)\n", an, lastVid, av, at)
 			} else {
 				if tag {
